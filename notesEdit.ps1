@@ -13,4 +13,9 @@ Import-CSV "C:\scripts\unames.csv" | ForEach-Object {
 $User = $_.UserName 
  $oldnotes = Get-ADUser $User -Properties info | %{ $_.info}
  Set-ADUser $User -Replace @{info="$($oldnotes)`n$ticket - $wave - $admin - $date"}
+
+ Write-Host $User 'Edited'
 }
+
+Write-Host 'Press Enter to exit...'
+$host.UI.RawUI.ReadKey()
