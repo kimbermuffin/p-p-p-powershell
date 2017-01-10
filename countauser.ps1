@@ -9,7 +9,6 @@ While ($count -le 10) {
 
         Write-Host "Checked $name"
         
-        $Name = $name
         $Name = $dname + $count++
         
         Write-Host "We have incremented to $Name"
